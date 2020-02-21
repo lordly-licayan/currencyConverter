@@ -15,6 +15,8 @@ public class Main {
 	private static final String INVALID_AMOUNT= "Amount is inappropriate.";
 	private static final String INVALID_CURENCY= " currency is not valid!";
 	private static final String RATE_NOT_FOUND= "Rate not found!";
+	private static final String CONNECTION_ERROR= "There is a connection problem.";
+	
 	
 	public static void main(String[] args) {
 		try {
@@ -24,8 +26,8 @@ public class Main {
 			}
 			
 			String baseAmount= args[0];
-			String baseCurrency= args[1];
-			String toCurrency= args[2];
+			String baseCurrency= args[1].toUpperCase();
+			String toCurrency= args[2].toUpperCase();
 			double amount= Double.parseDouble(baseAmount);
 
 			String currencyRates= Helper.getCurrencyRates();
@@ -48,7 +50,7 @@ public class Main {
 		} catch (ProtocolException e) {
 			System.out.println(e.getMessage());
 		} catch (IOException e) {
-			System.out.println(e.getMessage());
+			System.out.println(CONNECTION_ERROR);
 		} catch (NullPointerException e){
 			System.out.println(RATE_NOT_FOUND);
 		} catch (NumberFormatException e){

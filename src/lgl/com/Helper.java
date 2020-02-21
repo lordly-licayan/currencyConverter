@@ -24,7 +24,7 @@ public class Helper {
 	private static final String EQUALS= " = ";
 	
 	private static String EXCHANGE_RATE_API = "https://api.exchangeratesapi.io/latest?base=EUR";
-	private static DecimalFormat decimalFormatting = new DecimalFormat("#.##");
+	private static DecimalFormat decimalFormatting = new DecimalFormat("#,###.##");
 	
 	
 	public static String getCurrencyRates() throws IOException{
